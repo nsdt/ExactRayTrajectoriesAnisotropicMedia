@@ -134,7 +134,7 @@ version `v1.0.0` on Zenodo:
 
 To reproduce or cite the version used for the article, use:
 
-> Nishidate, Y. (2026). *Exact ray trajectories in anisotropic media:
+> Nishidate, Y. (2026). *Exact ray trajectories in anisotropic media with axially varying non-diagonal optical metrics:
 > numerical experiments* (Version 1.0.0). Zenodo.
 > https://doi.org/10.5281/zenodo.22037538
 
