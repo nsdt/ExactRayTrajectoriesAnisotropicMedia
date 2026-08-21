@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use these numerical experiments, please cite this software. Add the article DOI after publication."
+title: "Exact ray trajectories in anisotropic media: numerical experiments"
+type: software
+authors:
+  - family-names: Nishidate
+    given-names: Yohei
+version: 1.0.0
+date-released: 2026-08-21
+license: MIT
+keywords:
+  - geometrical optics
+  - anisotropic media
+  - ray tracing
+  - optical metric
+  - numerical verification

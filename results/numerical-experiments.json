@@ -1,0 +1,178 @@
+{
+  "experiments": {
+    "closed_forms": {
+      "coordinate_shear_transformation_medium": {
+        "analytic_vs_general_quadrature_max_abs_error": 1.7763568394002505e-15,
+        "analytic_vs_geodesic_position_max_abs_error": 5.819789095085071e-13,
+        "explicit_endpoint_inverse_momentum_max_abs_error": 5.551115123125783e-17,
+        "metric_determinant_max_abs_error_from_one": 1.1102230246251565e-16,
+        "minimum_metric_eigenvalue": 0.8129772717868093
+      },
+      "factorized_tilted_uniaxial_grin": {
+        "analytic_vs_general_quadrature_max_abs_error": 7.105427357601002e-15,
+        "analytic_vs_geodesic_position_max_abs_error": 6.661338147750939e-15,
+        "maximum_absolute_g12_g13_or_g23": 0.30548620318715136,
+        "maxwell_normalized_singularity_max_residual": 4.618124000652612e-16,
+        "predicted_turning_z": 42.78722997085509,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "transverse_momentum_norm_P": 0.15570122573612621
+      },
+      "heliconical_uniaxial_extraordinary_ray": {
+        "analytic_vs_general_quadrature_max_abs_error": 4.440892098500626e-16,
+        "analytic_vs_geodesic_position_max_abs_error": 2.775002450050579e-13,
+        "circular_projection_max_abs_residual": 1.1102230246251565e-16,
+        "helix_radius": 0.32943632279552415,
+        "maximum_absolute_off_diagonal_metric_entry": 0.3286702308189767,
+        "maxwell_normalized_singularity_max_residual": 1.540617484473169e-16,
+        "quadratic_dispersion_max_abs_residual": 0.0
+      },
+      "indefinite_epsilon_negative_uniaxial": {
+        "analytic_vs_general_quadrature_max_abs_error": 2.1316282072803006e-14,
+        "analytic_vs_geodesic_position_max_abs_error": 2.4868995751603507e-14,
+        "maximum_scale": 1.0,
+        "maxwell_normalized_singularity_max_residual": 2.234614693447165e-16,
+        "minimum_transverse_block_eigenvalue": 2.2009581123208286,
+        "quadratic_dispersion_max_abs_residual": 1.7763568394002505e-15,
+        "schur_complement_h0": -1.476629646791867,
+        "transverse_momentum_norm_P": 2.019737970134173
+      }
+    },
+    "quadrature": {
+      "diagonal_reductions": {
+        "2013_section_3A_velocity_max_abs_error": 8.326672684688674e-17,
+        "2013_section_3B_velocity_max_abs_error": 2.7755575615628914e-17
+      },
+      "full_nondiagonal_spd_case": {
+        "constant_momentum": [
+          0.12330427501600615,
+          -0.05871632143619341
+        ],
+        "endpoint_inversion": {
+          "endpoint_inf_residual": 1.3322676295501878e-15,
+          "endpoint_map_evaluations": 5,
+          "minimum_D_at_gauss_nodes": 0.8869095747773065,
+          "recovered_momentum": [
+            0.34861338811215037,
+            -0.09761672519676147
+          ],
+          "target_endpoint": [
+            0.9,
+            -0.6
+          ]
+        },
+        "initial_F": 1.362483174068311,
+        "minimum_metric_eigenvalue_on_samples": 0.8000169410417397,
+        "rkf45_endpoint_results_by_tolerance": {
+          "1e-06": {
+            "accepted_steps": 16,
+            "endpoint_inf_error": 3.406857493892801e-07,
+            "rejected_steps": 3,
+            "rhs_evaluations": 114
+          },
+          "1e-08": {
+            "accepted_steps": 39,
+            "endpoint_inf_error": 2.414842131814865e-09,
+            "rejected_steps": 6,
+            "rhs_evaluations": 270
+          },
+          "1e-10": {
+            "accepted_steps": 97,
+            "endpoint_inf_error": 2.6461277613520906e-11,
+            "rejected_steps": 3,
+            "rhs_evaluations": 600
+          },
+          "1e-12": {
+            "accepted_steps": 246,
+            "endpoint_inf_error": 2.5990321006474915e-13,
+            "rejected_steps": 3,
+            "rhs_evaluations": 1494
+          }
+        },
+        "sampled_momentum_max_abs_drift": 9.539591339091658e-14,
+        "sampled_position_max_abs_error": 2.310651670001107e-13,
+        "sampled_rkf45_statistics": {
+          "accepted_steps": 289,
+          "rejected_steps": 1,
+          "rhs_evaluations": 1740
+        },
+        "sampled_slope_max_abs_error": 7.627232179174825e-14
+      },
+      "rotating_tilt_with_g13_g23": {
+        "quadrature_vs_logarithmic_solution_max_abs_error": 4.440892098500626e-16
+      }
+    },
+    "turning_point": {
+      "1e-06": {
+        "accepted_steps": 2000,
+        "hamiltonian_max_abs_drift": 4.996003610813204e-16,
+        "maximum_vertical_momentum": 1.0,
+        "minimum_abs_vertical_momentum": 1.695692197767329e-16,
+        "minimum_vertical_momentum": -1.0000000000000004,
+        "parabolic_path_max_abs_error": 1.2378986724570495e-14,
+        "rejected_steps": 0,
+        "rhs_evaluations": 12000,
+        "turning_x_abs_error": 8.881784197001252e-16,
+        "turning_z_abs_error": 2.220446049250313e-16
+      },
+      "1e-08": {
+        "accepted_steps": 2000,
+        "hamiltonian_max_abs_drift": 4.996003610813204e-16,
+        "maximum_vertical_momentum": 1.0,
+        "minimum_abs_vertical_momentum": 1.695692197767329e-16,
+        "minimum_vertical_momentum": -1.0000000000000004,
+        "parabolic_path_max_abs_error": 1.2378986724570495e-14,
+        "rejected_steps": 0,
+        "rhs_evaluations": 12000,
+        "turning_x_abs_error": 8.881784197001252e-16,
+        "turning_z_abs_error": 2.220446049250313e-16
+      },
+      "1e-10": {
+        "accepted_steps": 2000,
+        "hamiltonian_max_abs_drift": 4.996003610813204e-16,
+        "maximum_vertical_momentum": 1.0,
+        "minimum_abs_vertical_momentum": 1.695692197767329e-16,
+        "minimum_vertical_momentum": -1.0000000000000004,
+        "parabolic_path_max_abs_error": 1.2378986724570495e-14,
+        "rejected_steps": 0,
+        "rhs_evaluations": 12000,
+        "turning_x_abs_error": 8.881784197001252e-16,
+        "turning_z_abs_error": 2.220446049250313e-16
+      },
+      "1e-12": {
+        "accepted_steps": 2000,
+        "hamiltonian_max_abs_drift": 4.996003610813204e-16,
+        "maximum_vertical_momentum": 1.0,
+        "minimum_abs_vertical_momentum": 1.695692197767329e-16,
+        "minimum_vertical_momentum": -1.0000000000000004,
+        "parabolic_path_max_abs_error": 1.2378986724570495e-14,
+        "rejected_steps": 0,
+        "rhs_evaluations": 12000,
+        "turning_x_abs_error": 8.881784197001252e-16,
+        "turning_z_abs_error": 2.220446049250313e-16
+      }
+    },
+    "uniaxial_branch": {
+      "extraordinary_mode_with_rotating_axis": {
+        "block_vs_hamilton_velocity_max_abs_error": 6.938893903907228e-17,
+        "hamilton_quadrature_vs_geodesic_position_max_abs_error": 1.7752466163756253e-13,
+        "hamilton_velocity_vs_geodesic_slope_max_abs_error": 3.5946939869191397e-14,
+        "maximum_absolute_g13_or_g23": 0.3444150347289428,
+        "maxwell_normalized_singularity_max_residual": 6.374536387138412e-16,
+        "minimum_metric_eigenvalue": 1.727558245875982,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16
+      },
+      "ordinary_mode": {
+        "block_vs_hamilton_velocity_max_abs_error": 4.163336342344337e-17,
+        "maxwell_normalized_singularity_max_residual": 3.9387870229811407e-16,
+        "quadratic_dispersion_max_abs_residual": 6.661338147750939e-16
+      }
+    }
+  },
+  "runtime": {
+    "numpy": "1.26.4",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "python_implementation": "CPython"
+  },
+  "status": "passed"
+}
