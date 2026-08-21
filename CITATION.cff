@@ -7,6 +7,9 @@ authors:
     given-names: Yohei
 version: 1.0.0
 date-released: 2026-08-21
+repository-code: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
+doi: "10.5281/zenodo.22037537"
+url: "https://doi.org/10.5281/zenodo.22037537"
 license: MIT
 keywords:
   - geometrical optics

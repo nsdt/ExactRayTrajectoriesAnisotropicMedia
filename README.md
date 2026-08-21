@@ -125,14 +125,21 @@ A complete run passes only when every criterion encoded as an assertion holds:
 Raw diagnostic values, including quantities without a pass/fail threshold,
 are preserved in `results/numerical-experiments.json`.
 
-## Publication metadata to set after release
+## Archive and citation
 
-No provisional URL, GitHub owner, repository name, or DOI is embedded here.
-After publication, add the canonical repository URL to this section and to
-`repository-code` in `CITATION.cff`. After Zenodo assigns a DOI, add it here
-and as `doi` in `CITATION.cff`; optionally add the corresponding related
-identifier in `.zenodo.json`. Follow `RELEASE_CHECKLIST.md` so metadata and the
-release tag remain consistent.
+The numerical experiments used for the reported results are archived as
+version `v1.0.0` on Zenodo:
+
+[![DOI](https://zenodo.org/badge/1341342488.svg)](https://doi.org/10.5281/zenodo.22037537)
+
+To reproduce or cite the version used for the article, use:
+
+> Nishidate, Y. (2026). *Exact ray trajectories in anisotropic media:
+> numerical experiments* (Version 1.0.0). Zenodo.
+> https://doi.org/10.5281/zenodo.22037538
+
+The source repository is
+[github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia](https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia).
 
 ## License and citation
 
