@@ -1,5 +1,7 @@
 # Exact ray trajectories: numerical experiments
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22654497.svg)](https://doi.org/10.5281/zenodo.22654497)
+
 Code and data for *Exact ray trajectories in anisotropic media with axially
 varying non-diagonal optical metrics*.
 
@@ -47,8 +49,7 @@ check fails. All parameters and tolerances are fixed in the scripts.
 
 ## Citation
 
-This revision is prepared for **v1.1.0**; its GitHub release and Zenodo DOI
-are pending. Cite the version-specific DOI once that release is archived.
+Cite the version-specific DOI: [10.5281/zenodo.22654497](https://doi.org/10.5281/zenodo.22654497).
 
 The preceding **v1.0.0** is archived at
 [Zenodo](https://doi.org/10.5281/zenodo.22037538).

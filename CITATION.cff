@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the version-specific Zenodo DOI of the release used; the DOI for version 1.1.0 is pending."
+message: "If you use this software, please cite it using the metadata below."
 title: "Exact Ray Trajectories in Anisotropic Media: Numerical Experiments"
 type: software
 abstract: >-
@@ -12,6 +12,8 @@ authors:
 version: 1.1.0
 repository-code: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
 url: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
+doi: 10.5281/zenodo.22654497
+date-released: 2026-09-08
 license: MIT
 keywords:
   - geometrical optics
