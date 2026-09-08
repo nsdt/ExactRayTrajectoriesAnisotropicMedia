@@ -9,10 +9,14 @@
         "minimum_metric_eigenvalue": 0.8129772717868093
       },
       "factorized_tilted_uniaxial_grin": {
-        "analytic_vs_general_quadrature_max_abs_error": 7.105427357601002e-15,
-        "analytic_vs_geodesic_position_max_abs_error": 6.661338147750939e-15,
+        "analytic_vs_general_quadrature_max_abs_error": 1.7763568394002505e-15,
+        "analytic_vs_geodesic_position_max_abs_error": 1.3322676295501878e-15,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 4.440892098500626e-16,
         "maximum_absolute_g12_g13_or_g23": 0.30548620318715136,
-        "maxwell_normalized_singularity_max_residual": 4.618124000652612e-16,
+        "maxwell_normalized_singularity_max_residual": 4.618124000652611e-16,
+        "minimum_normalized_axial_poynting_flux": 0.8513903013591233,
+        "poynting_direction_max_sine_error": 1.0393527340642352e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
         "predicted_turning_z": 42.78722997085509,
         "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
         "transverse_momentum_norm_P": 0.15570122573612621
@@ -21,20 +25,199 @@
         "analytic_vs_general_quadrature_max_abs_error": 4.440892098500626e-16,
         "analytic_vs_geodesic_position_max_abs_error": 2.775002450050579e-13,
         "circular_projection_max_abs_residual": 1.1102230246251565e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 0.0,
         "helix_radius": 0.32943632279552415,
         "maximum_absolute_off_diagonal_metric_entry": 0.3286702308189767,
         "maxwell_normalized_singularity_max_residual": 1.540617484473169e-16,
+        "minimum_normalized_axial_poynting_flux": 0.9901150827970617,
+        "poynting_direction_max_sine_error": 4.2010762257345845e-16,
+        "poynting_direction_min_cosine": 0.9999999999999998,
         "quadratic_dispersion_max_abs_residual": 0.0
       },
       "indefinite_epsilon_negative_uniaxial": {
         "analytic_vs_general_quadrature_max_abs_error": 2.1316282072803006e-14,
         "analytic_vs_geodesic_position_max_abs_error": 2.4868995751603507e-14,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 1.3322676295501878e-15,
         "maximum_scale": 1.0,
-        "maxwell_normalized_singularity_max_residual": 2.234614693447165e-16,
+        "maxwell_normalized_singularity_max_residual": 2.2346146934471644e-16,
+        "minimum_normalized_axial_poynting_flux": 0.5104701795724598,
         "minimum_transverse_block_eigenvalue": 2.2009581123208286,
+        "poynting_direction_max_sine_error": 2.2432275316371653e-15,
+        "poynting_direction_min_cosine": 0.9999999999999997,
         "quadratic_dispersion_max_abs_residual": 1.7763568394002505e-15,
         "schur_complement_h0": -1.476629646791867,
         "transverse_momentum_norm_P": 2.019737970134173
+      },
+      "quadratic_tilted_uniaxial_grin": {
+        "analytic_vs_general_quadrature_max_abs_error": 2.220446049250313e-15,
+        "analytic_vs_geodesic_position_max_abs_error": 5.578870698741412e-13,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 4.440892098500626e-16,
+        "maxwell_normalized_singularity_max_residual": 3.3882520502804134e-16,
+        "minimum_normalized_axial_poynting_flux": 0.8616173809926274,
+        "poynting_direction_max_sine_error": 9.121412916732176e-16,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "scalar_endpoint_bisection_iterations": 80,
+        "scalar_endpoint_equation_abs_residual": 0.0,
+        "scalar_endpoint_inverse_Pi_abs_error": 2.220446049250313e-16,
+        "scalar_endpoint_inverse_momentum_max_abs_error": 2.220446049250313e-16
+      },
+      "reciprocal_stability": {
+        "cases": [
+          {
+            "gradient": 0.0,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 0.0
+          },
+          {
+            "gradient": 0.0,
+            "max_abs_error": 6.661338147750939e-16,
+            "momentum_scale": 1e-10
+          },
+          {
+            "gradient": 0.0,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 1e-08
+          },
+          {
+            "gradient": 0.0,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 1e-06
+          },
+          {
+            "gradient": 0.0,
+            "max_abs_error": 1.1102230246251565e-16,
+            "momentum_scale": 0.001
+          },
+          {
+            "gradient": 0.0,
+            "max_abs_error": 2.6645352591003757e-15,
+            "momentum_scale": 1.0
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 0.0
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 4.440892098500626e-16,
+            "momentum_scale": 1e-10
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 4.440892098500626e-16,
+            "momentum_scale": 1e-08
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 1e-06
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 2.7755575615628914e-16,
+            "momentum_scale": 0.001
+          },
+          {
+            "gradient": 1e-14,
+            "max_abs_error": 2.220446049250313e-15,
+            "momentum_scale": 1.0
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 0.0
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 1e-10
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 1e-08
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 2.7755575615628914e-16,
+            "momentum_scale": 1e-06
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 0.001
+          },
+          {
+            "gradient": 1e-10,
+            "max_abs_error": 1.1102230246251565e-15,
+            "momentum_scale": 1.0
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 0.0
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 1e-10
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 4.440892098500626e-16,
+            "momentum_scale": 1e-08
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 4.440892098500626e-16,
+            "momentum_scale": 1e-06
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 0.001
+          },
+          {
+            "gradient": 0.041,
+            "max_abs_error": 3.552713678800501e-15,
+            "momentum_scale": 1.0
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 0.0
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 1e-10
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 2.220446049250313e-16,
+            "momentum_scale": 1e-08
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 4.440892098500626e-16,
+            "momentum_scale": 1e-06
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 3.3306690738754696e-16,
+            "momentum_scale": 0.001
+          },
+          {
+            "gradient": -0.041,
+            "max_abs_error": 1.7763568394002505e-15,
+            "momentum_scale": 1.0
+          }
+        ],
+        "invalid_profile_cases_rejected": 2,
+        "maximum_quadrature_error": 3.552713678800501e-15,
+        "small_momentum_regression_error": 2.220446049250313e-16
       }
     },
     "quadrature": {
@@ -104,6 +287,7 @@
     "turning_point": {
       "1e-06": {
         "accepted_steps": 2000,
+        "endpoint_inf_error": 1.0658141036401503e-14,
         "hamiltonian_max_abs_drift": 4.996003610813204e-16,
         "maximum_vertical_momentum": 1.0,
         "minimum_abs_vertical_momentum": 1.695692197767329e-16,
@@ -116,6 +300,7 @@
       },
       "1e-08": {
         "accepted_steps": 2000,
+        "endpoint_inf_error": 1.0658141036401503e-14,
         "hamiltonian_max_abs_drift": 4.996003610813204e-16,
         "maximum_vertical_momentum": 1.0,
         "minimum_abs_vertical_momentum": 1.695692197767329e-16,
@@ -128,6 +313,7 @@
       },
       "1e-10": {
         "accepted_steps": 2000,
+        "endpoint_inf_error": 1.0658141036401503e-14,
         "hamiltonian_max_abs_drift": 4.996003610813204e-16,
         "maximum_vertical_momentum": 1.0,
         "minimum_abs_vertical_momentum": 1.695692197767329e-16,
@@ -140,6 +326,7 @@
       },
       "1e-12": {
         "accepted_steps": 2000,
+        "endpoint_inf_error": 1.0658141036401503e-14,
         "hamiltonian_max_abs_drift": 4.996003610813204e-16,
         "maximum_vertical_momentum": 1.0,
         "minimum_abs_vertical_momentum": 1.695692197767329e-16,
@@ -149,6 +336,60 @@
         "rhs_evaluations": 12000,
         "turning_x_abs_error": 8.881784197001252e-16,
         "turning_z_abs_error": 2.220446049250313e-16
+      },
+      "sparse_output_tolerance_study": {
+        "1e-06": {
+          "accepted_steps": 22,
+          "endpoint_inf_error": 4.1548357021525817e-07,
+          "hamiltonian_max_abs_drift": 1.0880151379843994e-07,
+          "maximum_vertical_momentum": 1.0,
+          "minimum_abs_vertical_momentum": 2.4545545364990096e-07,
+          "minimum_vertical_momentum": -0.9999997729089231,
+          "parabolic_path_max_abs_error": 3.7753144632723945e-07,
+          "rejected_steps": 7,
+          "rhs_evaluations": 174,
+          "turning_x_abs_error": 2.95391359372843e-07,
+          "turning_z_abs_error": 7.184343231436685e-08
+        },
+        "1e-08": {
+          "accepted_steps": 50,
+          "endpoint_inf_error": 7.679385127801197e-09,
+          "hamiltonian_max_abs_drift": 2.0856264493218646e-09,
+          "maximum_vertical_momentum": 1.0,
+          "minimum_abs_vertical_momentum": 3.897128026536523e-09,
+          "minimum_vertical_momentum": -0.9999999955873486,
+          "parabolic_path_max_abs_error": 6.7137910925163524e-09,
+          "rejected_steps": 0,
+          "rhs_evaluations": 300,
+          "turning_x_abs_error": 4.87997198206358e-09,
+          "turning_z_abs_error": 3.6995926322447303e-09
+        },
+        "1e-10": {
+          "accepted_steps": 125,
+          "endpoint_inf_error": 6.672973285049011e-11,
+          "hamiltonian_max_abs_drift": 2.1363411040198343e-11,
+          "maximum_vertical_momentum": 1.0,
+          "minimum_abs_vertical_momentum": 2.927132299566926e-11,
+          "minimum_vertical_momentum": -0.9999999999476663,
+          "parabolic_path_max_abs_error": 3.754307975611937e-11,
+          "rejected_steps": 0,
+          "rhs_evaluations": 750,
+          "turning_x_abs_error": 3.744293763929818e-11,
+          "turning_z_abs_error": 3.754307975611937e-11
+        },
+        "1e-12": {
+          "accepted_steps": 312,
+          "endpoint_inf_error": 6.297184995673888e-13,
+          "hamiltonian_max_abs_drift": 2.1399548799649892e-13,
+          "maximum_vertical_momentum": 1.0,
+          "minimum_abs_vertical_momentum": 2.6275379441664803e-13,
+          "minimum_vertical_momentum": -0.9999999999994506,
+          "parabolic_path_max_abs_error": 3.7281289166912757e-13,
+          "rejected_steps": 2,
+          "rhs_evaluations": 1884,
+          "turning_x_abs_error": 3.3928415632544784e-13,
+          "turning_z_abs_error": 3.7281289166912757e-13
+        }
       }
     },
     "uniaxial_branch": {
@@ -173,6 +414,10 @@
     "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
     "python": "3.12.3",
     "python_implementation": "CPython"
+  },
+  "software": {
+    "previous_release_doi": "10.5281/zenodo.22037538",
+    "version": "1.1.0"
   },
   "status": "passed"
 }

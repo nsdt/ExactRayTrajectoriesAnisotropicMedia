@@ -8,3 +8,7 @@ tmp/
 *.pdf
 *.tex
 results/*.tmp
+
+# Editor temporary files
+.#*
+*~

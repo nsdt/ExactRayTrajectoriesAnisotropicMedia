@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run every published numerical experiment and write one JSON report."""
+"""Run all numerical checks and regenerate the result JSON and figure CSVs."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from pathlib import Path
 
 import numpy as np
 
+import generate_figure_data
 import verify_closed_forms
 import verify_quadrature
 import verify_turning_point
@@ -27,8 +28,13 @@ def main() -> None:
         "uniaxial_branch": verify_uniaxial_branch.run_checks(),
         "closed_forms": verify_closed_forms.run_checks(),
     }
+    generate_figure_data.main()
     report = {
         "status": "passed",
+        "software": {
+            "version": (PACKAGE_DIR / "VERSION").read_text(encoding="utf-8").strip(),
+            "previous_release_doi": "10.5281/zenodo.22037538",
+        },
         "runtime": {
             "python": platform.python_version(),
             "python_implementation": platform.python_implementation(),
@@ -42,6 +48,7 @@ def main() -> None:
     temporary.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temporary.replace(RESULT_FILE)
     print(f"All numerical experiments passed. Results: {RESULT_FILE}")
+    print("Regenerated four figure CSV files.")
 
 
 if __name__ == "__main__":
