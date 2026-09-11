@@ -25,7 +25,7 @@ On Windows PowerShell, use `python` to create the environment and
 `.venv\Scripts\python.exe` in place of `.venv/bin/python`.
 
 The final command runs the baseline checks and all manuscript-figure checks.
-It regenerates four CSV files in `data/`, 19 CSV files in `figure_results/`,
+It regenerates 19 CSV files in `figure_results/`,
 `results/numerical-experiments.json`, and `figure_results/verification.json`.
 It exits with an error if any check fails. All parameters and tolerances are
 fixed in the scripts. Last digits can differ between numerical-library or
@@ -40,9 +40,7 @@ platform builds; the checks use numerical acceptance thresholds.
 | `verify_turning_point.py` | Hamiltonian continuation through a turning point and a separate tolerance study |
 | `verify_uniaxial_branch.py` | Ordinary and extraordinary dispersion and Maxwell checks |
 | `verify_closed_forms.py` | Five closed-form solutions, specialized inverses, stable zero-parameter limits, and Poynting directions |
-| `generate_figure_data.py` | Regenerate the four baseline CSVs separately |
 | `generate_manuscript_figures.py` | Regenerate and verify the two manuscript figures |
-| `data/*.csv` | Baseline trajectory coordinates retained from version 1.1.0 |
 | `figure_results/*.csv`, `figure_results/verification.json` | Fifteen comparisons, paired-mode trajectories, errors, parameters, and source hashes |
 | `mode_demonstrations.tex`, `closed_form_verification.tex` | PGFPlots sources for the two manuscript figures |
 | `mode_demonstrations.pdf`, `closed_form_verification.pdf` | Rendered figures |
@@ -67,6 +65,8 @@ LaTeX with PGFPlots, whereas the numerical checks require only Python and NumPy.
 - Nineteen new CSVs, a complete figure-verification report, two PGFPlots
   sources, and their rendered PDFs.
 - A single entry point for the baseline and manuscript-figure calculations.
+- Removed the superseded figure generator and four CSV files used only by the
+  previous combined figure. They remain available in the earlier releases.
 
 ## Changes for 1.1.0
 

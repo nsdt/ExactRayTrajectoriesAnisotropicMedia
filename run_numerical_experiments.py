@@ -10,7 +10,6 @@ from pathlib import Path
 
 import numpy as np
 
-import generate_figure_data
 import generate_manuscript_figures
 import verify_closed_forms
 import verify_quadrature
@@ -29,7 +28,6 @@ def main() -> None:
         "uniaxial_branch": verify_uniaxial_branch.run_checks(),
         "closed_forms": verify_closed_forms.run_checks(),
     }
-    generate_figure_data.main()
     generate_manuscript_figures.main()
     report = {
         "status": "passed",
@@ -50,7 +48,7 @@ def main() -> None:
     temporary.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temporary.replace(RESULT_FILE)
     print(f"All numerical experiments passed. Results: {RESULT_FILE}")
-    print("Regenerated four baseline CSV files and 19 manuscript-figure CSV files.")
+    print("Regenerated 19 manuscript-figure CSV files.")
 
 
 if __name__ == "__main__":
