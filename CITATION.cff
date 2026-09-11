@@ -1,19 +1,19 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it using the metadata below."
+message: "Version 1.2.0 is prepared for release; its Zenodo DOI will be added after archival."
 title: "Exact Ray Trajectories in Anisotropic Media: Numerical Experiments"
 type: software
 abstract: >-
   NumPy experiments for exact ray trajectories in axially varying non-diagonal
   optical metrics, including independent geodesic integration, closed forms,
-  endpoint inverses, Maxwell checks, and reproducible figure data.
+  endpoint inverses, Maxwell checks, and reproducible figure data. Version 1.2.0
+  includes comparisons for five closed-form solutions at three parameter values
+  each, paired ordinary and extraordinary rays, and the figure sources and PDFs.
 authors:
   - family-names: Nishidate
     given-names: Yohei
-version: 1.1.0
+version: 1.2.0
 repository-code: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
 url: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
-doi: 10.5281/zenodo.22654497
-date-released: 2026-09-08
 license: MIT
 keywords:
   - geometrical optics

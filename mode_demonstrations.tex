@@ -1,0 +1,38 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,bm,pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+group style={group size=2 by 2,horizontal sep=2.2cm,vertical sep=1.8cm},
+width=7.1cm,height=5.4cm,grid=major,
+tick label style={font=\small},label style={font=\small},title style={font=\small},
+legend style={font=\scriptsize,draw=none,fill=white,fill opacity=0.85,text opacity=1},
+view={43}{24},xlabel={$x$},ylabel={$y$},zlabel={$z$},
+]
+\nextgroupplot[title={(a) Reciprocal grading},view={-25}{25},legend pos=north west]
+\addplot3[black,very thick,dashed] table[col sep=comma,x=x_o,y=y_o,z=z] {figure_results/demo_reciprocal.csv};
+\addlegendentry{ordinary}
+\addplot3[blue,very thick,solid] table[col sep=comma,x=x_e,y=y_e,z=z] {figure_results/demo_reciprocal.csv};
+\addlegendentry{extraordinary}
+\nextgroupplot[title={(b) Quadratic grading},view={-25}{25},legend pos=north west]
+\addplot3[black,very thick,dashed] table[col sep=comma,x=x_o,y=y_o,z=z] {figure_results/demo_quadratic.csv};
+\addlegendentry{ordinary}
+\addplot3[blue,very thick,solid] table[col sep=comma,x=x_e,y=y_e,z=z] {figure_results/demo_quadratic.csv};
+\addlegendentry{extraordinary}
+\nextgroupplot[title={(c) Heliconical rotation},legend pos=north west]
+\addplot3[black,very thick,dashed] table[col sep=comma,x=x_o,y=y_o,z=z] {figure_results/demo_heliconical.csv};
+\addlegendentry{ordinary}
+\addplot3[blue,very thick,solid] table[col sep=comma,x=x_e,y=y_e,z=z] {figure_results/demo_heliconical.csv};
+\addlegendentry{extraordinary}
+\nextgroupplot[title={(d) Heliconical transverse projection},view={0}{90},
+xlabel={$x$},ylabel={$y$},axis equal image,legend style={at={(0.5,-0.3)},anchor=north,legend columns=2,column sep=5pt}]
+\addplot[blue,very thick] table[col sep=comma,x=x_e,y=y_e] {figure_results/demo_heliconical.csv};
+\addlegendentry{extraordinary}
+\addplot[black,only marks,mark=square*,mark size=2.5pt] coordinates {(0,0)};
+\addlegendentry{ordinary}
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

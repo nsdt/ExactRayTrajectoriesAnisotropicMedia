@@ -12,3 +12,13 @@ results/*.tmp
 # Editor temporary files
 .#*
 *~
+
+# PGFPlots sources for the manuscript figures.
+!mode_demonstrations.tex
+!closed_form_verification.tex
+!mode_demonstrations.pdf
+!closed_form_verification.pdf
+*.aux
+*.log
+*.synctex.gz
+figure_results/*.tmp

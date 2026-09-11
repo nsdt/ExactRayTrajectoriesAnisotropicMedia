@@ -1,0 +1,92 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,bm,pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+group style={group size=3 by 2,horizontal sep=1.45cm,vertical sep=1.75cm},
+width=5.4cm,height=4.5cm,grid=major,
+tick label style={font=\scriptsize},label style={font=\small},title style={font=\small},
+legend style={font=\scriptsize,draw=none,fill=white,fill opacity=0.8,text opacity=1},
+xlabel={$z$},ylabel={$x(z)$},ylabel style={xshift=5pt},legend pos=north west,
+]
+\nextgroupplot[title={(a) Reciprocal}]
+\addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/reciprocal_1.csv};
+\addlegendentry{$\gamma=-0.06$}
+\addplot[blue,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/reciprocal_1.csv};
+\addplot[blue,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/reciprocal_1.csv};
+\addplot[red!75!black,thick,dashed] table[col sep=comma,x=z,y=x] {figure_results/reciprocal_2.csv};
+\addlegendentry{$\gamma=0.04$}
+\addplot[red!75!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/reciprocal_2.csv};
+\addplot[red!75!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/reciprocal_2.csv};
+\addplot[teal!80!black,thick,dashdotted] table[col sep=comma,x=z,y=x] {figure_results/reciprocal_3.csv};
+\addlegendentry{$\gamma=0.18$}
+\addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/reciprocal_3.csv};
+\addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/reciprocal_3.csv};
+\nextgroupplot[title={(b) Quadratic}]
+\addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/quadratic_1.csv};
+\addlegendentry{$\lambda=0.04$}
+\addplot[blue,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/quadratic_1.csv};
+\addplot[blue,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/quadratic_1.csv};
+\addplot[red!75!black,thick,dashed] table[col sep=comma,x=z,y=x] {figure_results/quadratic_2.csv};
+\addlegendentry{$\lambda=0.3$}
+\addplot[red!75!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/quadratic_2.csv};
+\addplot[red!75!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/quadratic_2.csv};
+\addplot[teal!80!black,thick,dashdotted] table[col sep=comma,x=z,y=x] {figure_results/quadratic_3.csv};
+\addlegendentry{$\lambda=1.2$}
+\addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/quadratic_3.csv};
+\addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/quadratic_3.csv};
+\nextgroupplot[title={(c) Hyperbolic}]
+\addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/hyperbolic_1.csv};
+\addlegendentry{$\gamma=-0.08$}
+\addplot[blue,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/hyperbolic_1.csv};
+\addplot[blue,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/hyperbolic_1.csv};
+\addplot[red!75!black,thick,dashed] table[col sep=comma,x=z,y=x] {figure_results/hyperbolic_2.csv};
+\addlegendentry{$\gamma=0.04$}
+\addplot[red!75!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/hyperbolic_2.csv};
+\addplot[red!75!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/hyperbolic_2.csv};
+\addplot[teal!80!black,thick,dashdotted] table[col sep=comma,x=z,y=x] {figure_results/hyperbolic_3.csv};
+\addlegendentry{$\gamma=0.14$}
+\addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/hyperbolic_3.csv};
+\addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/hyperbolic_3.csv};
+\nextgroupplot[title={(d) Heliconical},legend pos=south west]
+\addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/heliconical_1.csv};
+\addlegendentry{$\vartheta=0.1$}
+\addplot[blue,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/heliconical_1.csv};
+\addplot[blue,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/heliconical_1.csv};
+\addplot[red!75!black,thick,dashed] table[col sep=comma,x=z,y=x] {figure_results/heliconical_2.csv};
+\addlegendentry{$\vartheta=0.5$}
+\addplot[red!75!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/heliconical_2.csv};
+\addplot[red!75!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/heliconical_2.csv};
+\addplot[teal!80!black,thick,dashdotted] table[col sep=comma,x=z,y=x] {figure_results/heliconical_3.csv};
+\addlegendentry{$\vartheta=1.0$}
+\addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/heliconical_3.csv};
+\addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/heliconical_3.csv};
+\nextgroupplot[title={(e) Beam shifter}]
+\addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/rectangular_1.csv};
+\addlegendentry{$\Delta_x=0.3$}
+\addplot[blue,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/rectangular_1.csv};
+\addplot[blue,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/rectangular_1.csv};
+\addplot[red!75!black,thick,dashed] table[col sep=comma,x=z,y=x] {figure_results/rectangular_2.csv};
+\addlegendentry{$\Delta_x=0.6$}
+\addplot[red!75!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/rectangular_2.csv};
+\addplot[red!75!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/rectangular_2.csv};
+\addplot[teal!80!black,thick,dashdotted] table[col sep=comma,x=z,y=x] {figure_results/rectangular_3.csv};
+\addlegendentry{$\Delta_x=0.9$}
+\addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/rectangular_3.csv};
+\addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/rectangular_3.csv};
+\nextgroupplot[
+title={(f) Maximum absolute difference},xlabel={},ylabel={Abs. Diff.},ylabel style={xshift=8pt},
+ymode=log,ymin=1e-16,ymax=1e-10,xtick={1,2,3,4,5},
+xticklabels={Recip.,Quad.,Hyper.,Helix,Shear},
+x tick label style={rotate=35,anchor=east,font=\scriptsize},xmin=0.6,xmax=5.4,
+legend pos=north west]
+\addplot[black,only marks,mark=o,mark size=2.2pt] table[col sep=comma,x=case,y=rkf45] {figure_results/max_errors.csv};
+
+\addplot[orange!85!black,only marks,mark=+,mark size=3pt] table[col sep=comma,x=case,y=gauss] {figure_results/max_errors.csv};
+
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

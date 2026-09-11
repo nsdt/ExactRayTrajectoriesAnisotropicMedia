@@ -1,0 +1,759 @@
+{
+  "provenance": "Manuscript parameter sweeps and paired-mode illustrations",
+  "software_version": "1.2.0",
+  "numpy_version": "1.26.4",
+  "python_version": "3.12.3",
+  "source_sha256": {
+    "generate_manuscript_figures.py": "f02b9415b2401fe25c32a59fdad0029ae918841205da70d52d41da90099877b8",
+    "verify_closed_forms.py": "498bcf6ab81237b720756b9e8c729de3bcda55126e31ff8fce11b1dad3c3d952",
+    "verify_quadrature.py": "cf04722c727de5c13ff97cb91d5b2d64038e82a005870efc0505b55a097c8a2a"
+  },
+  "protocol": {
+    "z_interval": [
+      0,
+      8
+    ],
+    "samples": 161,
+    "rtol": 1e-12,
+    "atol": 1e-14,
+    "rkf45_safety_factor": 0.9,
+    "gauss_legendre_order": 128,
+    "error": "maximum absolute transverse component difference over samples",
+    "rkf45_output": "Integration steps are shortened to reach each output point.",
+    "initial_position": [
+      0,
+      0
+    ]
+  },
+  "base_parameters": {
+    "reciprocal_quadratic": {
+      "epsilon_o_ref": 1.9,
+      "epsilon_e_ref": 2.7,
+      "axis": [
+        0.4801620820586593,
+        -0.37012493825354986,
+        0.7952684484096545
+      ],
+      "chi0": 0.78,
+      "eta_c": 0.9,
+      "z_c": 2.3
+    },
+    "hyperbolic": {
+      "epsilon_o_ref": -1.25,
+      "epsilon_e_ref": 2.6,
+      "axis": [
+        0.25993385524968765,
+        -0.1899516634516948,
+        0.9467590804671315
+      ],
+      "eta0": 0.8
+    },
+    "heliconical": {
+      "epsilon_o": 1.85,
+      "epsilon_e": 2.55,
+      "Omega": 0.43,
+      "phi0": 0.27
+    },
+    "rectangular": {
+      "L": 8,
+      "delta_y": 0.2
+    },
+    "mu": 1
+  },
+  "cases": [
+    {
+      "medium": "reciprocal",
+      "parameter": "gradient",
+      "value": -0.06,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 2.6645352591003757e-15,
+      "max_gauss_error": 1.7763568394002505e-15,
+      "minimum_sampled_hD": 3.1726215479597375,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 2.858120047299906e-07,
+          "accepted_steps": 6,
+          "rejected_steps": 0,
+          "rhs_evaluations": 36
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 2.822977407390681e-10,
+          "accepted_steps": 16,
+          "rejected_steps": 0,
+          "rhs_evaluations": 96
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.3803181647963356e-13,
+          "accepted_steps": 57,
+          "rejected_steps": 0,
+          "rhs_evaluations": 342
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 4.1465265053792816e-16,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 1.3322676295501878e-15,
+        "poynting_direction_max_sine_error": 5.928593550334434e-16,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.9073430855330241
+      }
+    },
+    {
+      "medium": "reciprocal",
+      "parameter": "gradient",
+      "value": 0.04,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 8.881784197001252e-16,
+      "max_gauss_error": 3.1086244689504383e-15,
+      "minimum_sampled_hD": 1.430165070844334,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.840508496719906e-07,
+          "accepted_steps": 5,
+          "rejected_steps": 0,
+          "rhs_evaluations": 30
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 4.729385771895522e-10,
+          "accepted_steps": 11,
+          "rejected_steps": 0,
+          "rhs_evaluations": 66
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 5.497824417943775e-13,
+          "accepted_steps": 39,
+          "rejected_steps": 0,
+          "rhs_evaluations": 234
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 5.047338534860062e-16,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 6.661338147750939e-16,
+        "poynting_direction_max_sine_error": 1.0451734135809427e-15,
+        "poynting_direction_min_cosine": 0.9999999999999997,
+        "minimum_normalized_axial_poynting_flux": 0.8529355324444221
+      }
+    },
+    {
+      "medium": "reciprocal",
+      "parameter": "gradient",
+      "value": 0.18,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 2.2994939286036242e-12,
+      "max_gauss_error": 1.0658141036401503e-14,
+      "minimum_sampled_hD": 0.10064935793473748,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 4.7181269193785624e-06,
+          "accepted_steps": 12,
+          "rejected_steps": 3,
+          "rhs_evaluations": 90
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 4.024749422626428e-09,
+          "accepted_steps": 45,
+          "rejected_steps": 0,
+          "rhs_evaluations": 270
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 3.716138508025324e-12,
+          "accepted_steps": 181,
+          "rejected_steps": 2,
+          "rhs_evaluations": 1098
+        }
+      ],
+      "accepted_steps": 250,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1506,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 3.6613576178572894e-16,
+        "quadratic_dispersion_max_abs_residual": 3.3306690738754696e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 4.440892098500626e-16,
+        "poynting_direction_max_sine_error": 1.7147914856012178e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.47230290348097886
+      }
+    },
+    {
+      "medium": "quadratic",
+      "parameter": "profile_rate",
+      "value": 0.04,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 3.1086244689504383e-15,
+      "max_gauss_error": 3.1086244689504383e-15,
+      "minimum_sampled_hD": 1.5869965807184265,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 2.047547118522175e-07,
+          "accepted_steps": 5,
+          "rejected_steps": 0,
+          "rhs_evaluations": 30
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 1.3167169576888682e-09,
+          "accepted_steps": 10,
+          "rejected_steps": 0,
+          "rhs_evaluations": 60
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.2573054536678683e-12,
+          "accepted_steps": 35,
+          "rejected_steps": 0,
+          "rhs_evaluations": 210
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 3.028970315495227e-16,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 4.440892098500626e-16,
+        "poynting_direction_max_sine_error": 1.0337787607319456e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.8616173809926274
+      }
+    },
+    {
+      "medium": "quadratic",
+      "parameter": "profile_rate",
+      "value": 0.3,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 7.029932191926491e-13,
+      "max_gauss_error": 4.884981308350689e-15,
+      "minimum_sampled_hD": 1.5869965807184265,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 4.79455628976666e-07,
+          "accepted_steps": 11,
+          "rejected_steps": 0,
+          "rhs_evaluations": 66
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 7.799925150209219e-10,
+          "accepted_steps": 38,
+          "rejected_steps": 0,
+          "rhs_evaluations": 228
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 8.22453216642316e-13,
+          "accepted_steps": 146,
+          "rejected_steps": 2,
+          "rhs_evaluations": 888
+        }
+      ],
+      "accepted_steps": 239,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1440,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 3.813901489549881e-16,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 8.881784197001252e-16,
+        "poynting_direction_max_sine_error": 1.0429598422709816e-15,
+        "poynting_direction_min_cosine": 0.9999999999999997,
+        "minimum_normalized_axial_poynting_flux": 0.8616173809926274
+      }
+    },
+    {
+      "medium": "quadratic",
+      "parameter": "profile_rate",
+      "value": 1.2,
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "max_rkf45_error": 3.4505731605349865e-13,
+      "max_gauss_error": 5.329070518200751e-15,
+      "minimum_sampled_hD": 1.5869965807184265,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 6.743496032690643e-07,
+          "accepted_steps": 22,
+          "rejected_steps": 3,
+          "rhs_evaluations": 150
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 1.280917594215225e-10,
+          "accepted_steps": 78,
+          "rejected_steps": 3,
+          "rhs_evaluations": 486
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 1.1901590823981678e-13,
+          "accepted_steps": 305,
+          "rejected_steps": 2,
+          "rhs_evaluations": 1842
+        }
+      ],
+      "accepted_steps": 387,
+      "rejected_steps": 1,
+      "rhs_evaluations": 2328,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 5.141285867835151e-16,
+        "quadratic_dispersion_max_abs_residual": 4.440892098500626e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 1.7763568394002505e-15,
+        "poynting_direction_max_sine_error": 8.10752668832711e-16,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.8616173809926274
+      }
+    },
+    {
+      "medium": "hyperbolic",
+      "parameter": "gradient",
+      "value": -0.08,
+      "momentum": [
+        1.8,
+        -1.1
+      ],
+      "max_rkf45_error": 4.796163466380676e-14,
+      "max_gauss_error": 1.3322676295501878e-14,
+      "minimum_sampled_hD": 1.801101248017853,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.6309394368363428e-07,
+          "accepted_steps": 8,
+          "rejected_steps": 2,
+          "rhs_evaluations": 60
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 4.204601111723605e-10,
+          "accepted_steps": 23,
+          "rejected_steps": 0,
+          "rhs_evaluations": 138
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.3092638912203256e-13,
+          "accepted_steps": 85,
+          "rejected_steps": 1,
+          "rhs_evaluations": 516
+        }
+      ],
+      "accepted_steps": 164,
+      "rejected_steps": 0,
+      "rhs_evaluations": 984,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 2.872940301499409e-16,
+        "quadratic_dispersion_max_abs_residual": 6.217248937900877e-15,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 8.881784197001252e-16,
+        "poynting_direction_max_sine_error": 6.561596535353689e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.5333868698947886
+      }
+    },
+    {
+      "medium": "hyperbolic",
+      "parameter": "gradient",
+      "value": 0.04,
+      "momentum": [
+        1.8,
+        -1.1
+      ],
+      "max_rkf45_error": 1.1546319456101628e-14,
+      "max_gauss_error": 1.2434497875801753e-14,
+      "minimum_sampled_hD": 1.3285797610444556,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.0204612070907615e-06,
+          "accepted_steps": 5,
+          "rejected_steps": 0,
+          "rhs_evaluations": 30
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 2.022732203954547e-09,
+          "accepted_steps": 13,
+          "rejected_steps": 0,
+          "rhs_evaluations": 78
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.1440627051561023e-12,
+          "accepted_steps": 46,
+          "rejected_steps": 0,
+          "rhs_evaluations": 276
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 3.2014979917103634e-16,
+        "quadratic_dispersion_max_abs_residual": 1.3322676295501878e-15,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 8.881784197001252e-16,
+        "poynting_direction_max_sine_error": 2.327499892067112e-15,
+        "poynting_direction_min_cosine": 0.9999999999999997,
+        "minimum_normalized_axial_poynting_flux": 0.4942359068643037
+      }
+    },
+    {
+      "medium": "hyperbolic",
+      "parameter": "gradient",
+      "value": 0.14,
+      "momentum": [
+        1.8,
+        -1.1
+      ],
+      "max_rkf45_error": 1.354294454358751e-11,
+      "max_gauss_error": 3.375077994860476e-14,
+      "minimum_sampled_hD": 0.1472760436109616,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 3.149383277722961e-05,
+          "accepted_steps": 15,
+          "rejected_steps": 8,
+          "rhs_evaluations": 138
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 2.652322805829499e-08,
+          "accepted_steps": 56,
+          "rejected_steps": 0,
+          "rhs_evaluations": 336
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.262190434976219e-11,
+          "accepted_steps": 228,
+          "rejected_steps": 2,
+          "rhs_evaluations": 1380
+        }
+      ],
+      "accepted_steps": 298,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1794,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 2.7024802165379844e-16,
+        "quadratic_dispersion_max_abs_residual": 1.3322676295501878e-15,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 1.3322676295501878e-15,
+        "poynting_direction_max_sine_error": 1.464484751053976e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.23077102966431723
+      }
+    },
+    {
+      "medium": "heliconical",
+      "parameter": "cone_angle",
+      "value": 0.1,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 4.192826641435943e-14,
+      "max_gauss_error": 8.881784197001252e-16,
+      "minimum_sampled_hD": 1.8550754119462471,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 7.26396897424153e-08,
+          "accepted_steps": 12,
+          "rejected_steps": 2,
+          "rhs_evaluations": 84
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 7.630377579781467e-11,
+          "accepted_steps": 41,
+          "rejected_steps": 0,
+          "rhs_evaluations": 246
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 7.268491364342822e-14,
+          "accepted_steps": 159,
+          "rejected_steps": 1,
+          "rhs_evaluations": 960
+        }
+      ],
+      "accepted_steps": 238,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1434,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 2.605566333384354e-16,
+        "quadratic_dispersion_max_abs_residual": 1.1102230246251565e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 2.220446049250313e-16,
+        "poynting_direction_max_sine_error": 3.0862019362540088e-15,
+        "poynting_direction_min_cosine": 0.9999999999999998,
+        "minimum_normalized_axial_poynting_flux": 0.9996263855796544
+      }
+    },
+    {
+      "medium": "heliconical",
+      "parameter": "cone_angle",
+      "value": 0.5,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 1.7330581414398694e-13,
+      "max_gauss_error": 4.218847493575595e-15,
+      "minimum_sampled_hD": 1.9745881434265296,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.9707058529494503e-07,
+          "accepted_steps": 12,
+          "rejected_steps": 2,
+          "rhs_evaluations": 84
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 2.947365684846659e-10,
+          "accepted_steps": 43,
+          "rejected_steps": 0,
+          "rhs_evaluations": 258
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 2.949862576429041e-13,
+          "accepted_steps": 168,
+          "rejected_steps": 1,
+          "rhs_evaluations": 1014
+        }
+      ],
+      "accepted_steps": 247,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1488,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 1.637630198219082e-16,
+        "quadratic_dispersion_max_abs_residual": 1.1102230246251565e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 0.0,
+        "poynting_direction_max_sine_error": 5.781556449244597e-16,
+        "poynting_direction_min_cosine": 0.9999999999999999,
+        "minimum_normalized_axial_poynting_flux": 0.9924872671694132
+      }
+    },
+    {
+      "medium": "heliconical",
+      "parameter": "cone_angle",
+      "value": 1.0,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 8.718581412381354e-13,
+      "max_gauss_error": 5.10702591327572e-15,
+      "minimum_sampled_hD": 2.2963483332121783,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.335445164563076e-06,
+          "accepted_steps": 12,
+          "rejected_steps": 1,
+          "rhs_evaluations": 78
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 1.3464634962545574e-09,
+          "accepted_steps": 45,
+          "rejected_steps": 0,
+          "rhs_evaluations": 270
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 1.3011813848606835e-12,
+          "accepted_steps": 179,
+          "rejected_steps": 1,
+          "rhs_evaluations": 1080
+        }
+      ],
+      "accepted_steps": 294,
+      "rejected_steps": 1,
+      "rhs_evaluations": 1770,
+      "maxwell": {
+        "maxwell_normalized_singularity_max_residual": 3.4622905533206767e-16,
+        "quadratic_dispersion_max_abs_residual": 2.220446049250313e-16,
+        "full_inverse_vs_block_vertical_covector_max_abs_error": 0.0,
+        "poynting_direction_max_sine_error": 3.5040126030056513e-16,
+        "poynting_direction_min_cosine": 0.9999999999999997,
+        "minimum_normalized_axial_poynting_flux": 0.9882120757893593
+      }
+    },
+    {
+      "medium": "rectangular",
+      "parameter": "delta_x",
+      "value": 0.3,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 1.6653345369377348e-16,
+      "max_gauss_error": 1.942890293094024e-15,
+      "minimum_sampled_hD": 0.9999999999999999,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 5.551115123125783e-17,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 5.551115123125783e-17,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 5.551115123125783e-17,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960
+    },
+    {
+      "medium": "rectangular",
+      "parameter": "delta_x",
+      "value": 0.6,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 4.440892098500626e-16,
+      "max_gauss_error": 3.885780586188048e-15,
+      "minimum_sampled_hD": 0.9999999999999999,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 5.551115123125783e-17,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 5.551115123125783e-17,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 1.1102230246251565e-16,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960
+    },
+    {
+      "medium": "rectangular",
+      "parameter": "delta_x",
+      "value": 0.9,
+      "momentum": [
+        0.0,
+        0.0
+      ],
+      "max_rkf45_error": 5.551115123125783e-16,
+      "max_gauss_error": 5.995204332975845e-15,
+      "minimum_sampled_hD": 0.9999999999999999,
+      "sparse_endpoint_runs": [
+        {
+          "rtol": 1e-06,
+          "endpoint_error": 1.1102230246251565e-16,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-09,
+          "endpoint_error": 1.1102230246251565e-16,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        },
+        {
+          "rtol": 1e-12,
+          "endpoint_error": 1.1102230246251565e-16,
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "rhs_evaluations": 24
+        }
+      ],
+      "accepted_steps": 160,
+      "rejected_steps": 0,
+      "rhs_evaluations": 960
+    }
+  ],
+  "mode_demonstrations": [
+    {
+      "medium": "reciprocal",
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "ordinary_rkf45_error": 1.9984014443252818e-15
+    },
+    {
+      "medium": "quadratic",
+      "momentum": [
+        0.54,
+        -0.29
+      ],
+      "ordinary_rkf45_error": 8.102407633714392e-13
+    },
+    {
+      "medium": "heliconical",
+      "momentum": [
+        0,
+        0
+      ],
+      "z_end": 14.612058853906015,
+      "ordinary": "straight axial ray"
+    }
+  ],
+  "status": "passed"
+}

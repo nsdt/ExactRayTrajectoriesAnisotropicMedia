@@ -11,6 +11,7 @@ from pathlib import Path
 import numpy as np
 
 import generate_figure_data
+import generate_manuscript_figures
 import verify_closed_forms
 import verify_quadrature
 import verify_turning_point
@@ -29,11 +30,12 @@ def main() -> None:
         "closed_forms": verify_closed_forms.run_checks(),
     }
     generate_figure_data.main()
+    generate_manuscript_figures.main()
     report = {
         "status": "passed",
         "software": {
             "version": (PACKAGE_DIR / "VERSION").read_text(encoding="utf-8").strip(),
-            "previous_release_doi": "10.5281/zenodo.22037538",
+            "previous_release_doi": "10.5281/zenodo.22654497",
         },
         "runtime": {
             "python": platform.python_version(),
@@ -48,7 +50,7 @@ def main() -> None:
     temporary.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temporary.replace(RESULT_FILE)
     print(f"All numerical experiments passed. Results: {RESULT_FILE}")
-    print("Regenerated four figure CSV files.")
+    print("Regenerated four baseline CSV files and 19 manuscript-figure CSV files.")
 
 
 if __name__ == "__main__":
