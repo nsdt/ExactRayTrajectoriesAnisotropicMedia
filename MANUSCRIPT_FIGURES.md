@@ -76,5 +76,6 @@ Rebuilding the PDFs is separate from the Python calculation. The provided
 PDFs were checked against the current PGFPlots sources and data.
 Numerical comparisons use acceptance thresholds, not bitwise equality.
 Floating-point differences in the last digits may occur across environments.
-The version-specific DOI is recorded in the repository README and CITATION.cff
-after archival. No DOI is assigned by these scripts.
+Version 1.2.0 is archived at https://doi.org/10.5281/zenodo.22703136.
+The DOI was added to the repository metadata after archival; the release tag
+and archived files are unchanged. No DOI is assigned by these scripts.

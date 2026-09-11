@@ -1,12 +1,13 @@
 # Exact ray trajectories: numerical experiments
 
-[![DOI (all archived versions)](https://zenodo.org/badge/DOI/10.5281/zenodo.22037537.svg)](https://doi.org/10.5281/zenodo.22037537)
+[![DOI (version 1.2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.22703136.svg)](https://doi.org/10.5281/zenodo.22703136)
 
 Code and data for *Exact ray trajectories in anisotropic media with axially
 varying non-diagonal optical metrics*.
 
-Version **1.2.0** is prepared for release. Its version-specific Zenodo DOI
-will be added after archival; the badge links to the existing version series.
+Version **1.2.0** is available as a
+[GitHub release](https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia/releases/tag/v1.2.0)
+and is archived on [Zenodo](https://doi.org/10.5281/zenodo.22703136).
 
 ## Reproduce
 
@@ -78,8 +79,14 @@ LaTeX with PGFPlots, whereas the numerical checks require only Python and NumPy.
 
 ## Citation
 
-The version-specific DOI for **v1.2.0** is pending. Until it is assigned,
-identify this version and the exact Git commit when referring to these files.
+Nishidate, Y. (2026). *Exact Ray Trajectories in Anisotropic Media: Numerical
+Experiments* (Version 1.2.0). Zenodo.
+[https://doi.org/10.5281/zenodo.22703136](https://doi.org/10.5281/zenodo.22703136)
+
+The archived code corresponds to tag `v1.2.0` at commit
+`2bc14269fa523f86fb0b8d661d56cc84877d85bc`. The DOI was added to this README
+and `CITATION.cff` after archival; the release tag and archived files are unchanged.
+The [concept DOI](https://doi.org/10.5281/zenodo.22037537) identifies all versions.
 
 Previous archives remain available as
 [v1.1.0](https://doi.org/10.5281/zenodo.22654497) and
