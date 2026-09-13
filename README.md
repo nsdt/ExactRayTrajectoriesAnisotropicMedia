@@ -1,13 +1,14 @@
 # Exact ray trajectories: numerical experiments
 
-[![DOI (all archived versions)](https://zenodo.org/badge/DOI/10.5281/zenodo.22037537.svg)](https://doi.org/10.5281/zenodo.22037537)
+[![DOI (version 1.3.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.22734391.svg)](https://doi.org/10.5281/zenodo.22734391)
 
 Code and data for *Exact ray trajectories in anisotropic media with axially
 varying non-diagonal optical metrics*.
 
 Version **1.3.0** adds extraordinary trajectories after assumed mode conversion,
-complete transverse projections, and revised manuscript figures. The version DOI
-will be added after archival.
+complete transverse projections, and revised manuscript figures. It is available
+as a [GitHub release](https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia/releases/tag/v1.3.0)
+and is archived on [Zenodo](https://doi.org/10.5281/zenodo.22734391).
 
 The conversion positions are prescribed for illustration. These calculations
 verify the trajectories after the assumed events; they do not predict conversion
@@ -94,7 +95,13 @@ LaTeX with PGFPlots, whereas the numerical checks require only Python and NumPy.
 
 ## Citation
 
-The version-specific DOI for **1.3.0** will be added after archival.
+Nishidate, Y. (2026). *Exact Ray Trajectories in Anisotropic Media: Numerical
+Experiments* (Version 1.3.0). Zenodo.
+[https://doi.org/10.5281/zenodo.22734391](https://doi.org/10.5281/zenodo.22734391)
+
+The archive corresponds to tag `v1.3.0` at commit
+`2e7ca4d82c422d32c15f3f60ce31fafcc9bdc179`. DOI information was added to the
+repository after archival; the release tag and archived files are unchanged.
 The [concept DOI](https://doi.org/10.5281/zenodo.22037537) identifies all versions.
 
 Previous archives remain available as

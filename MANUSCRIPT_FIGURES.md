@@ -110,8 +110,9 @@ Rebuilding the PDFs is separate from the Python calculation. The provided
 PDFs were checked against the current PGFPlots sources and data.
 Numerical comparisons use acceptance thresholds, not bitwise equality.
 Floating-point differences in the last digits may occur across environments.
-The version-specific DOI for 1.3.0 will be recorded in the repository metadata
-after archival. No DOI is assigned by these scripts.
+Version 1.3.0 is archived at https://doi.org/10.5281/zenodo.22734391.
+DOI information was added to the repository metadata after archival; the release
+tag and archived files are unchanged. No DOI is assigned by these scripts.
 
 The current Fig. 2 arranges its six panels in two columns and three rows.
 The PGFPlots width and height settings are 7 cm and 4.8 cm;
