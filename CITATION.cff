@@ -5,15 +5,17 @@ type: software
 abstract: >-
   NumPy experiments for exact ray trajectories in axially varying non-diagonal
   optical metrics, including independent geodesic integration, closed forms,
-  endpoint inverses, Maxwell checks, and reproducible figure data. Version 1.2.0
+  endpoint inverses, Maxwell checks, and reproducible figure data. Version 1.3.0
   includes comparisons for five closed-form solutions at three parameter values
-  each, paired ordinary and extraordinary rays, and the figure sources and PDFs.
+  each, paired ordinary and extraordinary rays, and five extraordinary
+  trajectories after assumed mode conversion, with complete transverse
+  projections and independent numerical comparisons. Conversion events and
+  amplitudes are not predicted. The figure sources and PDFs are included.
 authors:
   - family-names: Nishidate
     given-names: Yohei
-version: 1.2.0
-date-released: 2026-09-11
-doi: 10.5281/zenodo.22703136
+version: 1.3.0
+date-released: 2026-09-13
 repository-code: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
 url: "https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia"
 license: MIT

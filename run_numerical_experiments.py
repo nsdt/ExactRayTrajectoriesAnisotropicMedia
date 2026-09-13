@@ -33,7 +33,7 @@ def main() -> None:
         "status": "passed",
         "software": {
             "version": (PACKAGE_DIR / "VERSION").read_text(encoding="utf-8").strip(),
-            "previous_release_doi": "10.5281/zenodo.22654497",
+            "previous_release_doi": "10.5281/zenodo.22703136",
         },
         "runtime": {
             "python": platform.python_version(),
@@ -48,7 +48,7 @@ def main() -> None:
     temporary.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temporary.replace(RESULT_FILE)
     print(f"All numerical experiments passed. Results: {RESULT_FILE}")
-    print("Regenerated 19 manuscript-figure CSV files.")
+    print("Regenerated 22 manuscript-figure CSV files.")
 
 
 if __name__ == "__main__":

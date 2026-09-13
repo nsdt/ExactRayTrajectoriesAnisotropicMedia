@@ -1,7 +1,9 @@
-# Manuscript figures for version 1.2.0
+# Manuscript figures
 
-These experiments are included in version 1.2.0. The preceding v1.1.0 archive,
-DOI 10.5281/zenodo.22654497, does not contain these parameter sweeps or figures.
+Version 1.3.0 includes the parameter sweeps, paired-mode figures, and additional
+trajectories after assumed mode conversion, including complete transverse
+projections. Version 1.2.0 (DOI 10.5281/zenodo.22703136) contains the original
+parameter sweeps and figures but not the additional trajectories or revised figures.
 The main command, `python run_numerical_experiments.py`, includes all the
 calculations below. They can also be run separately.
 
@@ -11,10 +13,12 @@ Run from an environment with the pinned NumPy dependency:
 python generate_manuscript_figures.py
 ```
 
-The command writes figure_results/verification.json and 19 CSV files:
-15 trajectory comparisons, three paired-mode illustrations, and one error
-summary. It exits with an error if a trajectory, ordinary-mode specialization,
-sparse-output convergence check, or uniaxial Maxwell check fails.
+The command writes figure_results/verification.json and 22 CSV files:
+15 trajectory comparisons, three paired-mode illustrations, one error summary,
+and three files for the assumed-conversion trajectories, their starting points,
+and complete transverse projections.
+It exits with an error if a trajectory, initial-condition check, ordinary-mode
+specialization, sparse-output convergence check, or uniaxial Maxwell check fails.
 
 The five comparisons use reciprocal grading, quadratic grading, linear
 hyperbolic grading, heliconical rotation, and the manuscript's cubic rectangular
@@ -37,6 +41,35 @@ The parameter values for the verification figure are:
 The mode illustration is a separate calculation. Its reciprocal, quadratic,
 and heliconical parameters remain gamma=0.041, lambda=0.23, and theta=0.61.
 
+In Fig. 1(c) and (d), orange dashed curves illustrate extraordinary trajectories
+after an assumed conversion from the ordinary mode at z=j*(2*pi/Omega)/6,
+j=1,...,5. Each trajectory starts on the axial ordinary ray with transverse
+momentum p=0 and follows the heliconical closed-form solution from that position.
+The existing axis phase phi(z)=Omega*z+phi_ref is retained for every starting point.
+Each added path remains extraordinary thereafter. The selected positions are
+illustration parameters; no mode-conversion locations or amplitudes are predicted.
+
+Each of the five added trajectories is compared with independent RKF45 geodesic
+integration and Gauss-Legendre quadrature, and its starting position and momentum
+are checked. The JSON records these checks under
+mode_demonstrations[-1].conditional_conversions. These comparisons validate the
+trajectories after the assumed events, not the occurrence of mode conversion.
+NaN entries in demo_heliconical_conversions.csv occur only before the associated
+trajectory starts. The 241-point grid covers one full pitch, with starts at
+indices 40, 80, 120, 160, and 200. Orange markers are read from
+demo_heliconical_conversion_starts.csv.
+
+Fig. 1(c) retains the common interval 0 <= z <= P, where P=2*pi/Omega.
+For Fig. 1(d), demo_heliconical_full_projections.csv extends each extraordinary
+trajectory from its own starting position z_j to z_j+P (241 samples per path).
+The columns record delta_z and the absolute z, x, and y of each path; the phase
+is evaluated at the absolute z. Both axes span [-0.7, 0.7] with equal scales.
+For these parameters, 2*abs(w/Omega)=0.658873 bounds each absolute transverse
+coordinate, so the complete circular projections fit within the window.
+The extended paths are independently compared with RKF45 and Gauss-Legendre
+quadrature; their closure errors and coordinate extrema are recorded in each
+path's full_projection entry in verification.json.
+
 The error is an **absolute difference**, not a relative difference: for each
 parameter value, it is the maximum of abs(x_analytical - x_numerical) and
 abs(y_analytical - y_numerical) over the 161 output positions. Panel (f)
@@ -50,7 +83,8 @@ The manuscript reports the trajectory comparisons at the 161 output positions.
 
 The figures distinguish purpose:
 - mode_demonstrations.tex: ordinary and extraordinary trajectories in the
-  reciprocal, quadratic, and heliconical media; one pitch is shown for the helix.
+  reciprocal, quadratic, and heliconical media, with additional conditional
+  extraordinary trajectories and their complete transverse projections.
 - closed_form_verification.tex: all five closed-form solutions and independent numerical
   comparisons, plus maximum errors in both transverse coordinates.
 
@@ -76,6 +110,11 @@ Rebuilding the PDFs is separate from the Python calculation. The provided
 PDFs were checked against the current PGFPlots sources and data.
 Numerical comparisons use acceptance thresholds, not bitwise equality.
 Floating-point differences in the last digits may occur across environments.
-Version 1.2.0 is archived at https://doi.org/10.5281/zenodo.22703136.
-The DOI was added to the repository metadata after archival; the release tag
-and archived files are unchanged. No DOI is assigned by these scripts.
+The version-specific DOI for 1.3.0 will be recorded in the repository metadata
+after archival. No DOI is assigned by these scripts.
+
+The current Fig. 2 arranges its six panels in two columns and three rows.
+The PGFPlots width and height settings are 7 cm and 4.8 cm;
+the manuscript displays the complete figure at text width. The y-axis labels
+are shifted 3 pt toward the axes. This layout revision changes neither the
+numerical data nor the analytical/numerical comparisons.

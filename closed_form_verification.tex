@@ -6,11 +6,11 @@
 \begin{document}
 \begin{tikzpicture}
 \begin{groupplot}[
-group style={group size=3 by 2,horizontal sep=1.45cm,vertical sep=1.75cm},
-width=5.4cm,height=4.5cm,grid=major,
-tick label style={font=\scriptsize},label style={font=\small},title style={font=\small},
-legend style={font=\scriptsize,draw=none,fill=white,fill opacity=0.8,text opacity=1},
-xlabel={$z$},ylabel={$x(z)$},ylabel style={xshift=5pt},legend pos=north west,
+group style={group size=2 by 3,horizontal sep=1.8cm,vertical sep=1.75cm},
+width=7cm,height=4.8cm,grid=major,
+tick label style={font=\footnotesize},label style={font=\normalsize},title style={font=\normalsize},
+legend style={font=\footnotesize,draw=none,fill=white,fill opacity=0.8,text opacity=1},
+xlabel={$z$},ylabel={$x(z)$},ylabel style={yshift=-3pt},legend pos=north west,
 ]
 \nextgroupplot[title={(a) Reciprocal}]
 \addplot[blue,thick,solid] table[col sep=comma,x=z,y=x] {figure_results/reciprocal_1.csv};
@@ -78,10 +78,10 @@ xlabel={$z$},ylabel={$x(z)$},ylabel style={xshift=5pt},legend pos=north west,
 \addplot[teal!80!black,only marks,mark=o,mark size=1.9pt,mark repeat=16,forget plot] table[col sep=comma,x=z,y=x_rkf45] {figure_results/rectangular_3.csv};
 \addplot[teal!80!black,only marks,mark=+,mark size=2.1pt,mark repeat=16,mark phase=9,forget plot] table[col sep=comma,x=z,y=x_gauss] {figure_results/rectangular_3.csv};
 \nextgroupplot[
-title={(f) Maximum absolute difference},xlabel={},ylabel={Abs. Diff.},ylabel style={xshift=8pt},
+title={(f) Maximum absolute difference},xlabel={},ylabel={Abs. Diff.},
 ymode=log,ymin=1e-16,ymax=1e-10,xtick={1,2,3,4,5},
 xticklabels={Recip.,Quad.,Hyper.,Helix,Shear},
-x tick label style={rotate=35,anchor=east,font=\scriptsize},xmin=0.6,xmax=5.4,
+x tick label style={rotate=35,anchor=east,font=\footnotesize},xmin=0.6,xmax=5.4,
 legend pos=north west]
 \addplot[black,only marks,mark=o,mark size=2.2pt] table[col sep=comma,x=case,y=rkf45] {figure_results/max_errors.csv};
 

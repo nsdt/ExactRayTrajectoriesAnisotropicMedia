@@ -1,13 +1,17 @@
 # Exact ray trajectories: numerical experiments
 
-[![DOI (version 1.2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.22703136.svg)](https://doi.org/10.5281/zenodo.22703136)
+[![DOI (all archived versions)](https://zenodo.org/badge/DOI/10.5281/zenodo.22037537.svg)](https://doi.org/10.5281/zenodo.22037537)
 
 Code and data for *Exact ray trajectories in anisotropic media with axially
 varying non-diagonal optical metrics*.
 
-Version **1.2.0** is available as a
-[GitHub release](https://github.com/nsdt/ExactRayTrajectoriesAnisotropicMedia/releases/tag/v1.2.0)
-and is archived on [Zenodo](https://doi.org/10.5281/zenodo.22703136).
+Version **1.3.0** adds extraordinary trajectories after assumed mode conversion,
+complete transverse projections, and revised manuscript figures. The version DOI
+will be added after archival.
+
+The conversion positions are prescribed for illustration. These calculations
+verify the trajectories after the assumed events; they do not predict conversion
+events, amplitudes, or subsequent conversions.
 
 ## Reproduce
 
@@ -26,7 +30,7 @@ On Windows PowerShell, use `python` to create the environment and
 `.venv\Scripts\python.exe` in place of `.venv/bin/python`.
 
 The final command runs the baseline checks and all manuscript-figure checks.
-It regenerates 19 CSV files in `figure_results/`,
+It regenerates 22 CSV files in `figure_results/`,
 `results/numerical-experiments.json`, and `figure_results/verification.json`.
 It exits with an error if any check fails. All parameters and tolerances are
 fixed in the scripts. Last digits can differ between numerical-library or
@@ -42,7 +46,7 @@ platform builds; the checks use numerical acceptance thresholds.
 | `verify_uniaxial_branch.py` | Ordinary and extraordinary dispersion and Maxwell checks |
 | `verify_closed_forms.py` | Five closed-form solutions, specialized inverses, stable zero-parameter limits, and Poynting directions |
 | `generate_manuscript_figures.py` | Regenerate and verify the two manuscript figures |
-| `figure_results/*.csv`, `figure_results/verification.json` | Fifteen comparisons, paired-mode trajectories, errors, parameters, and source hashes |
+| `figure_results/*.csv`, `figure_results/verification.json` | Fifteen comparisons, paired-mode and conditional trajectories, errors, parameters, and source hashes |
 | `mode_demonstrations.tex`, `closed_form_verification.tex` | PGFPlots sources for the two manuscript figures |
 | `mode_demonstrations.pdf`, `closed_form_verification.pdf` | Rendered figures |
 | `results/numerical-experiments.json` | Recorded errors, residuals, and runtime information |
@@ -57,6 +61,17 @@ separately, use `.venv/bin/python generate_manuscript_figures.py`.
 See [MANUSCRIPT_FIGURES.md](MANUSCRIPT_FIGURES.md) for the parameters and figure
 build commands. PDFs are included for inspection; rebuilding them requires
 LaTeX with PGFPlots, whereas the numerical checks require only Python and NumPy.
+
+## Changes for 1.3.0
+
+- Five extraordinary trajectories starting at prescribed points on the ordinary
+  ray, with checks of their initial conditions and independent RKF45 and
+  Gauss-Legendre comparisons.
+- Full-pitch transverse projections, with numerical comparisons and closure checks.
+- Three additional CSV files (22 in total) and expanded verification records.
+- Revised Fig. 1 and a two-column, three-row layout for Fig. 2.
+- The four baseline verification scripts and the five closed-form solutions
+  are retained.
 
 ## Changes for 1.2.0
 
@@ -79,16 +94,11 @@ LaTeX with PGFPlots, whereas the numerical checks require only Python and NumPy.
 
 ## Citation
 
-Nishidate, Y. (2026). *Exact Ray Trajectories in Anisotropic Media: Numerical
-Experiments* (Version 1.2.0). Zenodo.
-[https://doi.org/10.5281/zenodo.22703136](https://doi.org/10.5281/zenodo.22703136)
-
-The archived code corresponds to tag `v1.2.0` at commit
-`2bc14269fa523f86fb0b8d661d56cc84877d85bc`. The DOI was added to this README
-and `CITATION.cff` after archival; the release tag and archived files are unchanged.
+The version-specific DOI for **1.3.0** will be added after archival.
 The [concept DOI](https://doi.org/10.5281/zenodo.22037537) identifies all versions.
 
 Previous archives remain available as
+[v1.2.0](https://doi.org/10.5281/zenodo.22703136),
 [v1.1.0](https://doi.org/10.5281/zenodo.22654497) and
 [v1.0.0](https://doi.org/10.5281/zenodo.22037538).
-Neither contains the new manuscript-figure calculations in version 1.2.0.
+They do not contain the conditional trajectories and figure revisions added in 1.3.0.

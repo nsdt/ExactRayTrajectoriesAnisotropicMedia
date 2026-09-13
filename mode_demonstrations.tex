@@ -3,6 +3,7 @@
 \usepackage{lmodern,bm,pgfplots}
 \usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=1.18}
+\definecolor{conversion}{RGB}{213,94,0}
 \begin{document}
 \begin{tikzpicture}
 \begin{groupplot}[
@@ -22,17 +23,30 @@ view={43}{24},xlabel={$x$},ylabel={$y$},zlabel={$z$},
 \addlegendentry{ordinary}
 \addplot3[blue,very thick,solid] table[col sep=comma,x=x_e,y=y_e,z=z] {figure_results/demo_quadratic.csv};
 \addlegendentry{extraordinary}
-\nextgroupplot[title={(c) Heliconical rotation},legend pos=north west]
+\nextgroupplot[title={(c) Heliconical rotation},
+legend style={at={(0.5,-0.2)},anchor=north,legend columns=1}]
 \addplot3[black,very thick,dashed] table[col sep=comma,x=x_o,y=y_o,z=z] {figure_results/demo_heliconical.csv};
 \addlegendentry{ordinary}
 \addplot3[blue,very thick,solid] table[col sep=comma,x=x_e,y=y_e,z=z] {figure_results/demo_heliconical.csv};
-\addlegendentry{extraordinary}
-\nextgroupplot[title={(d) Heliconical transverse projection},view={0}{90},
-xlabel={$x$},ylabel={$y$},axis equal image,legend style={at={(0.5,-0.3)},anchor=north,legend columns=2,column sep=5pt}]
-\addplot[blue,very thick] table[col sep=comma,x=x_e,y=y_e] {figure_results/demo_heliconical.csv};
-\addlegendentry{extraordinary}
-\addplot[black,only marks,mark=square*,mark size=2.5pt] coordinates {(0,0)};
-\addlegendentry{ordinary}
+\addlegendentry{extraordinary from $z=0$}
+\pgfplotsinvokeforeach{1,2,3,4,5}{
+\addplot3[conversion,thick,dashed,forget plot,unbounded coords=jump]
+table[col sep=comma,x=x_e#1,y=y_e#1,z=z] {figure_results/demo_heliconical_conversions.csv};
+}
+\addlegendimage{conversion,thick,dashed}
+\addlegendentry{after assumed conversion}
+\addplot3[conversion,only marks,mark=*,mark size=1.8pt,forget plot]
+table[col sep=comma,x=x_o,y=y_o,z=z] {figure_results/demo_heliconical_conversion_starts.csv};
+\nextgroupplot[title={(d) Transverse projection},view={0}{90},
+xlabel={$x$},ylabel={$y$},axis equal image,
+xmin=-0.7,xmax=0.7,ymin=-0.7,ymax=0.7,enlargelimits=false,
+xtick={-0.6,-0.3,0,0.3,0.6},ytick={-0.6,-0.3,0,0.3,0.6}]
+\addplot[blue,very thick,forget plot] table[col sep=comma,x=x_e,y=y_e] {figure_results/demo_heliconical.csv};
+\pgfplotsinvokeforeach{1,2,3,4,5}{
+\addplot[conversion,thick,dashed,forget plot,unbounded coords=jump]
+table[col sep=comma,x=x_e#1,y=y_e#1] {figure_results/demo_heliconical_full_projections.csv};
+}
+\addplot[black,only marks,mark=square*,mark size=2.5pt,forget plot] coordinates {(0,0)};
 \end{groupplot}
 \end{tikzpicture}
 \end{document}

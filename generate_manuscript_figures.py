@@ -3,7 +3,8 @@
 
 Run beside verify_closed_forms.py and verify_quadrature.py with NumPy.
 Outputs are deterministic CSV data and a JSON record under figure_results.
-The parameter sweeps are included in software version 1.2.0 and later.
+The parameter sweeps and conditional mode-conversion illustration are included
+in software version 1.3.0. Conversion events and amplitudes are not predicted.
 """
 from pathlib import Path
 import sys
@@ -53,6 +54,111 @@ def positions(cls, z, p):
 
 def write_csv(path, columns, values):
     np.savetxt(path, values, delimiter=",", header=",".join(columns), comments="", fmt="%.17g")
+
+def heliconical_conversion_illustration(out, z_values):
+    """Draw possible extraordinary paths after conversion at selected positions.
+
+    The starting positions are illustrative, not predictions of mode coupling.
+    Every path preserves transverse momentum p=0 at its starting point and
+    subsequently remains extraordinary. No amplitude or intensity is assigned.
+    """
+    momentum = np.zeros(2)
+    origin = np.zeros(2)
+    start_indices = np.arange(40, len(z_values) - 1, 40)
+    if len(z_values) != 241 or len(start_indices) != 5:
+        raise AssertionError("The illustration requires six equal pitch intervals")
+    columns = ["z"]
+    values = [z_values]
+    records = []
+    delta_z = z_values - z_values[0]
+    projection_columns = ["delta_z"]
+    projection_values = [delta_z]
+    coordinate_bound = 2.0 * abs(Heliconical.walkoff_coefficient() / Heliconical.twist_rate)
+    if coordinate_bound >= 0.7:
+        raise AssertionError("A full transverse projection can exceed the plot window")
+    for index, start_index in enumerate(start_indices, 1):
+        z0 = float(z_values[start_index])
+        sample_z = z_values[start_index:]
+        analytical = Heliconical.analytic_position(sample_z, origin, z0)
+        quadrature = gauss_position(Heliconical.metric, sample_z, origin, z0,
+                                   momentum, order=128)
+        initial_slope = exact_velocity(Heliconical.metric, z0, momentum)
+        grid, states, _ = integrate_geodesic_rkf45(
+            Heliconical.metric, z0, float(z_values[-1]),
+            np.r_[origin, initial_slope], sample_z, rtol=1e-12, atol=1e-14)
+        if not np.array_equal(grid, sample_z):
+            raise AssertionError("Unexpected conversion-illustration output grid")
+        initial_error = float(np.max(np.abs(analytical[0] - origin)))
+        rkf45_error = float(np.max(np.abs(analytical - states[:, :2])))
+        gauss_error = float(np.max(np.abs(analytical - quadrature)))
+        g0 = Heliconical.metric(z0)
+        tangent = np.r_[initial_slope, 1.0]
+        optical_factor = np.sqrt(tangent @ g0 @ tangent)
+        reconstructed_p = (g0[:2, :2] @ initial_slope + g0[:2, 2]) / optical_factor
+        momentum_error = float(np.max(np.abs(reconstructed_p - momentum)))
+        if initial_error > 1e-14 or momentum_error > 1e-14:
+            raise AssertionError((z0, "Incorrect initial condition", initial_error, momentum_error))
+        if rkf45_error > 1e-10 or gauss_error > 1e-12:
+            raise AssertionError((z0, "Incorrect extraordinary trajectory", rkf45_error, gauss_error))
+        # Panel (d) continues each ray for a complete pitch from its own start.
+        full_z = z0 + delta_z
+        full_analytical = Heliconical.analytic_position(full_z, origin, z0)
+        full_quadrature = gauss_position(
+            Heliconical.metric, full_z, origin, z0, momentum, order=128)
+        full_grid, full_states, _ = integrate_geodesic_rkf45(
+            Heliconical.metric, z0, float(full_z[-1]),
+            np.r_[origin, initial_slope], full_z, rtol=1e-12, atol=1e-14)
+        if not np.array_equal(full_grid, full_z):
+            raise AssertionError("Unexpected full-projection output grid")
+        full_rkf45_error = float(np.max(np.abs(full_analytical - full_states[:, :2])))
+        full_gauss_error = float(np.max(np.abs(full_analytical - full_quadrature)))
+        closure_error = float(np.max(np.abs(full_analytical[-1] - full_analytical[0])))
+        if full_rkf45_error > 1e-10 or full_gauss_error > 1e-12 or closure_error > 1e-14:
+            raise AssertionError((z0, "Incorrect full projection",
+                                  full_rkf45_error, full_gauss_error, closure_error))
+        if np.max(np.abs(full_analytical)) > coordinate_bound + 1e-14:
+            raise AssertionError("Unexpected projection coordinate bound")
+        projection_columns.extend([f"z_e{index}", f"x_e{index}", f"y_e{index}"])
+        projection_values.extend([full_z, full_analytical[:, 0], full_analytical[:, 1]])
+        # NaN marks positions before this trajectory begins, not invalid ray data.
+        padded = np.full((len(z_values), 2), np.nan)
+        padded[start_index:] = analytical
+        columns.extend([f"x_e{index}", f"y_e{index}"])
+        values.extend([padded[:, 0], padded[:, 1]])
+        records.append({
+            "index": index, "start_z": z0, "start_position": [0.0, 0.0],
+            "transverse_momentum": momentum.tolist(),
+            "samples": len(sample_z), "initial_position_error": initial_error,
+            "initial_momentum_error": momentum_error,
+            "max_rkf45_error": rkf45_error, "max_gauss_error": gauss_error,
+            "full_projection": {
+                "z_interval": [z0, float(full_z[-1])],
+                "samples": len(full_z),
+                "max_rkf45_error": full_rkf45_error,
+                "max_gauss_error": full_gauss_error,
+                "closure_error": closure_error,
+                "minimum_xy": full_analytical.min(axis=0).tolist(),
+                "maximum_xy": full_analytical.max(axis=0).tolist(),
+            },
+        })
+    write_csv(out / "demo_heliconical_conversions.csv", columns, np.column_stack(values))
+    write_csv(out / "demo_heliconical_conversion_starts.csv", ["z", "x_o", "y_o"],
+              np.column_stack([z_values[start_indices], np.zeros((5, 2))]))
+    write_csv(out / "demo_heliconical_full_projections.csv", projection_columns,
+              np.column_stack(projection_values))
+    return {
+        "interpretation": "Extraordinary trajectories conditional on one ordinary-to-extraordinary conversion per path at a selected point on the ordinary ray",
+        "conversion_positions": "five equally spaced interior positions over one pitch",
+        "spacing": float(z_values[-1] / 6.0),
+        "conversion_amplitudes_calculated": False,
+        "conversion_events_predicted": False,
+        "subsequent_conversions_calculated": False,
+        "projection_span": "one axial pitch from each selected starting position",
+        "projection_axis_limits": [-0.7, 0.7],
+        "full_projection_absolute_coordinate_bound": coordinate_bound,
+        "archive_status": "Included in software version 1.3.0",
+        "paths": records,
+    }
 
 def main():
     out = Path(__file__).resolve().parent / "figure_results"
@@ -162,7 +268,8 @@ def main():
     zh=np.linspace(0,2*np.pi/Heliconical.twist_rate,241)
     he=positions(Heliconical,zh,np.zeros(2))
     write_csv(out/"demo_heliconical.csv",["z","x_o","y_o","x_e","y_e"],np.column_stack([zh,np.zeros((len(zh),2)),he]))
-    report["mode_demonstrations"]=demos+[{"medium":"heliconical","momentum":[0,0],"z_end":float(zh[-1]),"ordinary":"straight axial ray"}]
+    report["mode_demonstrations"]=demos+[{"medium":"heliconical","momentum":[0,0],"z_end":float(zh[-1]),"ordinary":"straight axial ray",
+        "conditional_conversions":heliconical_conversion_illustration(out,zh)}]
     report["status"] = "passed"
     temporary = out / "verification.json.tmp"
     temporary.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")

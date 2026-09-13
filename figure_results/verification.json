@@ -1,10 +1,10 @@
 {
   "provenance": "Manuscript parameter sweeps and paired-mode illustrations",
-  "software_version": "1.2.0",
+  "software_version": "1.3.0",
   "numpy_version": "1.26.4",
   "python_version": "3.12.3",
   "source_sha256": {
-    "generate_manuscript_figures.py": "f02b9415b2401fe25c32a59fdad0029ae918841205da70d52d41da90099877b8",
+    "generate_manuscript_figures.py": "a5c937f479f611c3934ac6e39f9b3c1e709c553298970452a9f0d3ec1702e1f2",
     "verify_closed_forms.py": "498bcf6ab81237b720756b9e8c729de3bcda55126e31ff8fce11b1dad3c3d952",
     "verify_quadrature.py": "cf04722c727de5c13ff97cb91d5b2d64038e82a005870efc0505b55a097c8a2a"
   },
@@ -752,7 +752,199 @@
         0
       ],
       "z_end": 14.612058853906015,
-      "ordinary": "straight axial ray"
+      "ordinary": "straight axial ray",
+      "conditional_conversions": {
+        "interpretation": "Extraordinary trajectories conditional on one ordinary-to-extraordinary conversion per path at a selected point on the ordinary ray",
+        "conversion_positions": "five equally spaced interior positions over one pitch",
+        "spacing": 2.4353431423176692,
+        "conversion_amplitudes_calculated": false,
+        "conversion_events_predicted": false,
+        "subsequent_conversions_calculated": false,
+        "projection_span": "one axial pitch from each selected starting position",
+        "projection_axis_limits": [
+          -0.7,
+          0.7
+        ],
+        "full_projection_absolute_coordinate_bound": 0.6588726455910483,
+        "archive_status": "Included in software version 1.3.0",
+        "paths": [
+          {
+            "index": 1,
+            "start_z": 2.4353431423176692,
+            "start_position": [
+              0.0,
+              0.0
+            ],
+            "transverse_momentum": [
+              0.0,
+              0.0
+            ],
+            "samples": 201,
+            "initial_position_error": 0.0,
+            "initial_momentum_error": 0.0,
+            "max_rkf45_error": 6.940559238444166e-13,
+            "max_gauss_error": 8.493206138382448e-15,
+            "full_projection": {
+              "z_interval": [
+                2.4353431423176692,
+                17.047401996223684
+              ],
+              "samples": 241,
+              "max_rkf45_error": 7.556782177867477e-13,
+              "max_gauss_error": 1.1955714196432154e-14,
+              "closure_error": 7.314955814308725e-17,
+              "minimum_xy": [
+                -0.6483248104640379,
+                -0.24677321425711762
+              ],
+              "maximum_xy": [
+                0.010525680645128386,
+                0.4120772768520487
+              ]
+            }
+          },
+          {
+            "index": 2,
+            "start_z": 4.8706862846353385,
+            "start_position": [
+              0.0,
+              0.0
+            ],
+            "transverse_momentum": [
+              0.0,
+              0.0
+            ],
+            "samples": 161,
+            "initial_position_error": 0.0,
+            "initial_momentum_error": 0.0,
+            "max_rkf45_error": 3.084199562408685e-13,
+            "max_gauss_error": 7.216449660063518e-15,
+            "full_projection": {
+              "z_interval": [
+                4.8706862846353385,
+                19.482745138541354
+              ],
+              "samples": 241,
+              "max_rkf45_error": 6.288371144555166e-13,
+              "max_gauss_error": 1.1157741397482823e-14,
+              "closure_error": 3.657477907154362e-17,
+              "minimum_xy": [
+                -0.5604537867873022,
+                -0.5642743543732428
+              ],
+              "maximum_xy": [
+                0.09839670432186415,
+                0.09457613673592354
+              ]
+            }
+          },
+          {
+            "index": 3,
+            "start_z": 7.306029426953008,
+            "start_position": [
+              0.0,
+              0.0
+            ],
+            "transverse_momentum": [
+              0.0,
+              0.0
+            ],
+            "samples": 121,
+            "initial_position_error": 0.0,
+            "initial_momentum_error": 0.0,
+            "max_rkf45_error": 3.1463720517876936e-13,
+            "max_gauss_error": 4.218847493575595e-15,
+            "full_projection": {
+              "z_interval": [
+                7.306029426953008,
+                21.918088280859024
+              ],
+              "samples": 241,
+              "max_rkf45_error": 4.997668945350142e-13,
+              "max_gauss_error": 1.2406742300186124e-14,
+              "closure_error": 2.1944867442926174e-16,
+              "minimum_xy": [
+                -0.2415542218778475,
+                -0.6469263856707084
+              ],
+              "maximum_xy": [
+                0.4172962692313188,
+                0.011924105438457995
+              ]
+            }
+          },
+          {
+            "index": 4,
+            "start_z": 9.741372569270677,
+            "start_position": [
+              0.0,
+              0.0
+            ],
+            "transverse_momentum": [
+              0.0,
+              0.0
+            ],
+            "samples": 81,
+            "initial_position_error": 0.0,
+            "initial_momentum_error": 9.732717400966592e-18,
+            "max_rkf45_error": 1.2401191185062999e-13,
+            "max_gauss_error": 1.27675647831893e-15,
+            "full_projection": {
+              "z_interval": [
+                9.741372569270677,
+                24.353431423176694
+              ],
+              "samples": 241,
+              "max_rkf45_error": 7.503155370011999e-13,
+              "max_gauss_error": 1.2004286453759505e-14,
+              "closure_error": 7.314955814308725e-17,
+              "minimum_xy": [
+                -0.010525680645128386,
+                -0.41207727685204876
+              ],
+              "maximum_xy": [
+                0.6483248104640379,
+                0.24677321425711754
+              ]
+            }
+          },
+          {
+            "index": 5,
+            "start_z": 12.176715711588345,
+            "start_position": [
+              0.0,
+              0.0
+            ],
+            "transverse_momentum": [
+              0.0,
+              0.0
+            ],
+            "samples": 41,
+            "initial_position_error": 0.0,
+            "initial_momentum_error": 1.9465434801933184e-17,
+            "max_rkf45_error": 4.433953204596719e-14,
+            "max_gauss_error": 8.881784197001252e-16,
+            "full_projection": {
+              "z_interval": [
+                12.176715711588345,
+                26.78877456549436
+              ],
+              "samples": 241,
+              "max_rkf45_error": 6.455523459898795e-13,
+              "max_gauss_error": 1.0935696792557792e-14,
+              "closure_error": 4.754721279300671e-16,
+              "minimum_xy": [
+                -0.09839670432186422,
+                -0.09457613673592345
+              ],
+              "maximum_xy": [
+                0.5604537867873021,
+                0.5642743543732428
+              ]
+            }
+          }
+        ]
+      }
     }
   ],
   "status": "passed"
